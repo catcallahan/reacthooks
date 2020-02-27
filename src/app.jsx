@@ -1,11 +1,22 @@
-import React, { useState, useEffect} from 'react'
+import React, { Fragment, useState, useEffect } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import User from './components/user';
+import UserInfo from './components/userinfo';
 
 function App() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <Router>
+      <Fragment>
+        <Link to= "/">User List</Link>
+        <Switch>
+          {/* home route with component that shows a preview list of all objects from a specific endpoint */}
+          <Route exact path="/" component={User} />
+          {/* show a component specialized in showing all the information for that object's id */}
+          <Route exact path="/:id/details" component={UserInfo} />
+        </Switch>
+      </Fragment>
+    </Router>
+  );
 }
 
-export default App
+export default App;
