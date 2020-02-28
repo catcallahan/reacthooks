@@ -5,15 +5,16 @@ import { useEffect, useState } from "react";
 function UserInfo() {
   let { id } = useParams();
   const [info, setInfo] = useState({});
-  const newInfo = async () => {
-    let res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-    let info = await res.json();
-    setInfo(info);
-  };
-
+  
   useEffect(() => {
+      const newInfo = async () => {
+        let res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+        let info = await res.json();
+        setInfo(info);
+      };
+      
     newInfo();
-  }, []);
+  }, [id]);
 
   return (
     <div key={info.id} className="container">

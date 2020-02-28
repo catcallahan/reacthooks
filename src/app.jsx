@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import User from "./components/user";
 import UserInfo from "./components/userinfo";
@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Fragment>
-        <div className=" m-3" style={{backgroundColor: "211, 211, 206"}}>
+        <div className=" m-3" >
           <Link className="btn border-dark shadow"  to="/">
             User List
           </Link>
