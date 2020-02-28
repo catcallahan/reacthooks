@@ -1,13 +1,17 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import User from './components/user';
-import UserInfo from './components/userinfo';
+import User from "./components/user";
+import UserInfo from "./components/userinfo";
 
 function App() {
   return (
     <Router>
       <Fragment>
-        <Link to= "/">User List</Link>
+        <div className=" m-3" style={{backgroundColor: "211, 211, 206"}}>
+          <Link className="btn border-dark shadow"  to="/">
+            User List
+          </Link>
+        </div>
         <Switch>
           {/* home route with component that shows a preview list of all objects from a specific endpoint */}
           <Route exact path="/" component={User} />
